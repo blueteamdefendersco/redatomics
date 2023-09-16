@@ -1,2 +1,1 @@
-# redatomics
-Blue Team Defenders
+# Blue Team Defenders
