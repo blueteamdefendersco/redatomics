@@ -17,8 +17,8 @@ function a() {
 function b() {
     chmod 1777 /tmp/T1222/file1
     chmod a+w /tmp/T1222/file2
-    chown root:root /tmp/T1222/file3
-    chown -R root:root /tmp/T1222/recurse
+    chown tiffany:tiffany /tmp/T1222/file3
+    sudo chown -R root:root /tmp/T1222/recurse
     chattr -i /tmp/T1222/file5
     echo $(date -u) "Executed T1222 checks" >> /tmp/atomic2.log
     sleep 60
