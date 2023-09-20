@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /bin/bash
 
 # This test submits a command to be run in the future by the at daemon
 
