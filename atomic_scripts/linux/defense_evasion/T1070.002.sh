@@ -36,7 +36,7 @@ function d() {
 
 function e() {
     # Test 15 - Overwrite Linux Log
-    echo 0> #{log_path}
+    echo 0> /var/log/secure
     echo  $(date -u) "Completed T1070.002 - Overwrite system log via echo utility" >> /tmp/attacktest.txt 
     sleep 30
 }
