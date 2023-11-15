@@ -6,7 +6,7 @@
 sh -c 'export HISTCONTROL=ignoreboth'
 whoami
 sh -c 'sleep 5'
-echo 'HIST Test 1 completed'
+echo  $(date -u) "Completed T1562.003 - Disable history collection" >> /tmp/attacktest.txt
 
 # Atomic Test 4 - Clear bash history
 bashfile=$(echo "$HOME")/.bash_history
@@ -20,7 +20,7 @@ sleep 10
 # Clean up Atomic Test 4 - Clear bash history
 mv -f ~/.bash_history.old ~/.bash_history
 history -w
-echo 'HIST Test 4 completed'
+echo  $(date -u) "Completed T1562.003 - Disable history collection" >> /tmp/attacktest.txt
 
 # Atomic Test 5 - Setting the HISTCONTROL environment variable
 TEST=$(echo $HISTCONTROL)
@@ -37,7 +37,7 @@ ls -la $HISTFILE
 if [ $(history |wc -l) -eq 2 ]; then echo "Their is only one entry for ls -la $HISTFILE"; fi
 sleep 15
 sh -c 'export HISTCONTROL=$(echo $TEST)'
-echo 'HIST Test 5 completed'
+echo  $(date -u) "Completed T1562.003 - Disable history collection" >> /tmp/attacktest.txt
 
 # Atomic Test #6 - Setting the HISTFILESIZE environment variable
 TEST=$(echo $HISTFILESIZE)
@@ -47,7 +47,7 @@ if [ $(echo $HISTFILESIZE) -eq 0 ]; then echo "\$HISTFILESIZE is zero"; fi
 # -> $HISTFILESIZE is zero
 sleep 10
 export HISTCONTROL=$(echo $TEST)
-echo 'HIST Test 6 completed'
+echo  $(date -u) "Completed T1562.003 - Setting the HISTFILESIZE environment variable" >> /tmp/attacktest.txt
 
 # Atomic Test #7 - Setting the HISTSIZE environment variable
 echo $HISTSIZE
@@ -56,7 +56,7 @@ if [ $(echo $HISTSIZE) -eq 0 ]; then echo "\$HISTSIZE is zero"; fi
 # -> $HISTSIZE is zero
 sleep 10
 export HISTSIZE=100
-echo 'HIST Test 7 completed'
+echo  $(date -u) "Completed T1562.003 - Setting the HISTSIZE environment variable" >> /tmp/attacktest.txt
 
 # Atomic Test #8 - Setting the HISTFILE environment variable
 TEST=$(echo $HISTFILE)
@@ -66,7 +66,7 @@ if [ $(echo $HISTFILE) == "/dev/null" ]; then echo "\$HISTFILE is /dev/null"; fi
 # -> $HISTFILE is /dev/null
 sleep 10
 export HISTFILE=$(echo $TEST)
-echo 'HIST Test 8 completed'
+echo  $(date -u) "Completed T1562.003 - Setting the HISTFILE environment variable" >> /tmp/attacktest.txt
 
 # Atomic Test #10 - Setting the HISTIGNORE environment variable
 if ((${#HISTIGNORE[@]})); then echo "\$HISTIGNORE = $HISTIGNORE"; else export HISTIGNORE='ls*:rm*:ssh*'; echo "\$HISTIGNORE = $HISTIGNORE"; fi
@@ -88,4 +88,4 @@ if [ $(history |wc -l) -eq 0 ]; then echo "History cache is empty"; fi
 
 sleep 10
 unset HISTIGNORE
-echo 'HIST Test 10 completed'
+echo  $(date -u) "Completed T1562.003 - Setting the HISTIGNORE environment variable" >> /tmp/attacktest.txt
