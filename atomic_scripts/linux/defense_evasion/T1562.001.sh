@@ -45,6 +45,7 @@ function z() {
     # Clean up
     systemctl start rsyslog
     systemctl enable rsyslog
+    systemctl start auditd
     set -o history
     echo  $(date -u) "Completed T1562.001 - Cleaned up" >> /tmp/attacktest.txt
     sleep 30
