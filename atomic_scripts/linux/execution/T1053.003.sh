@@ -10,10 +10,10 @@ sleep 5
 crontab /tmp/notevil
 
 # Atomic Test #2 - Cron - Add script to all cron subfolders
-echo "echo 'Hello from Atomic Red Team'" > /tmp/atomic.log > /etc/cron.daily/persistevil
-echo "echo 'Hello from Atomic Red Team'" > /tmp/atomic.log > /etc/cron.hourly/persistevil
-echo "echo 'Hello from Atomic Red Team'" > /tmp/atomic.log > /etc/cron.monthly/persistevil
-echo "echo 'Hello from Atomic Red Team'" > /tmp/atomic.log > /etc/cron.weekly/persistevil
+echo "echo 'Hello from Atomic Red Team' > /tmp/atomic.log" > /etc/cron.daily/persistevil
+echo "echo 'Hello from Atomic Red Team' > /tmp/atomic.log" > /etc/cron.hourly/persistevil
+echo "echo 'Hello from Atomic Red Team' > /tmp/atomic.log" > /etc/cron.monthly/persistevil
+echo "echo 'Hello from Atomic Red Team' > /tmp/atomic.log" > /etc/cron.weekly/persistevil
 echo  $(date -u) "Completed T1053.003 - Cron - Add script to all cron subfolders" >> /tmp/attacktest.txt
 sleep 5
 rm /etc/cron.daily/persistevil
