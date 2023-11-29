@@ -8,6 +8,8 @@ echo "* * * * * /tmp/evil.sh" > /tmp/persistevil && crontab /tmp/persistevil
 echo  $(date -u) "Completed T1053.003 - Cron - Replace crontab with referenced file" >> /tmp/attacktest.txt
 sleep 5
 crontab /tmp/notevil
+rm /tmp/persistevil
+rm /tmp/notevil
 
 # Atomic Test #2 - Cron - Add script to all cron subfolders
 echo "echo 'Hello from Atomic Red Team' > /tmp/atomic.log" > /etc/cron.daily/persistevil
